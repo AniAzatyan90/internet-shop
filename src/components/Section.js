@@ -1,7 +1,7 @@
-import { Swiper, SwiperSlide } from "swiper/react"
+import {Swiper, SwiperSlide} from "swiper/react"
 import 'swiper/css'
 import Context from "./Context"
-import { useContext } from "react"
+import {useContext} from "react"
 
 
 export default function Section() {
@@ -13,7 +13,7 @@ export default function Section() {
     //   });
     const products = value.products.filter((product) => product.price > 200);
 
-    const { buscetProduct, setBuscetProduct } = value;
+    const {buscetProduct, setBuscetProduct} = value;
 
 
     const handleClick = (product) => {

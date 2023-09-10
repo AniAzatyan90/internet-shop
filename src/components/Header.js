@@ -1,8 +1,8 @@
-import { FiShoppingCart } from 'react-icons/fi'
-import { AiOutlineHeart, AiFillCreditCard } from 'react-icons/ai'
-import { useContext } from 'react'
+import {FiShoppingCart} from 'react-icons/fi'
+import {AiOutlineHeart, AiFillCreditCard} from 'react-icons/ai'
+import {useContext} from 'react'
 import Context from './Context'
-import { language } from '../database/Database';
+import {language} from '../database/Database';
 
 
 export default function Header() {
@@ -26,9 +26,9 @@ export default function Header() {
                 <FiShoppingCart onClick={() => {
                     value.setOpenbasket('polygon(0 0, 100% 0, 100% 100%, 0% 100%)');
                     //   document.body.style.overflow = 'hidden';
-                }} />
-                <AiOutlineHeart />
-                <AiFillCreditCard />
+                }}/>
+                <AiOutlineHeart/>
+                <AiFillCreditCard/>
             </div>
         </header>
     )
