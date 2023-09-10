@@ -19,14 +19,16 @@ function App() {
   const [categories, setCategories] = useState(categImg);
   const [buscetProduct, setBuscetProduct] = useState([]);
   const [openbasket, setOpenbasket] = useState('polygon(50% 0, 50% 0, 50% 100%, 50% 100%)');
-
+  const [total, setTotal] = useState(0);
   const value = {
     lang, setLang,
     openfilter, setOpenfilter,
     products, setProducts,
     categories, setCategories,
     buscetProduct, setBuscetProduct,
-    openbasket, setOpenbasket
+    openbasket, setOpenbasket,
+    total, setTotal
+
   }
   const paths = ['/Products', '/Ապրանքներ', '/Товары'];
   return (
