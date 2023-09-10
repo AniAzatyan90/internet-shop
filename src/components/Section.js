@@ -1,7 +1,7 @@
-import {Swiper, SwiperSlide} from "swiper/react"
+import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css'
 import Context from "./Context"
-import {useContext} from "react"
+import { useContext } from "react"
 
 
 export default function Section() {
@@ -13,13 +13,13 @@ export default function Section() {
     //   });
     const products = value.products.filter((product) => product.price > 200);
 
-    const {buscetProduct, setBuscetProduct} = value;
+    // const {buscetProduct, setBuscetProduct} = value;
 
 
-    const handleClick = (product) => {
-        const pr = products.find((value) => value.id === product.id);
-        setBuscetProduct([...buscetProduct, pr])
-    };
+    // const handleClick = (product) => {
+    //     const pr = products.find((value) => value.id === product.id);
+    //     setBuscetProduct([...buscetProduct, pr])
+    // };
 
     return (
         <div className="slider">
@@ -28,7 +28,7 @@ export default function Section() {
                     <SwiperSlide key={product.id}>
                         <img
                             src={product.picture}
-                            onClick={() => handleClick(product)}
+                            // onClick={() => handleClick(product)}
                             alt=""
                         />
                     </SwiperSlide>
