@@ -15,6 +15,7 @@ export default function Section() {
 
     const { buscetProduct, setBuscetProduct } = value;
 
+
     const handleClick = (product) => {
         const pr = products.find((value) => value.id === product.id);
         setBuscetProduct([...buscetProduct, pr])

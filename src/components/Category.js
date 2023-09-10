@@ -9,6 +9,7 @@ export default function Category() {
     const categImg = value.categories
 
     return (
+
         <div className="contCategory">
             <Swiper slidesPerView={6} spaceBetween={20} grabCursor='true'>
                 {categImg.map((pic, i) => <SwiperSlide>
