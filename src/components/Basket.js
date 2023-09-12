@@ -1,7 +1,7 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import Context from "./Context"
 
-import Item from "./Item";
+import BuscetItem from "./BuscetItem";
 
 export default function Basket() {
     const value = useContext(Context);
@@ -17,7 +17,7 @@ export default function Basket() {
                 <p>Count : {value.count}</p>
             </div>
             <div className="contentBasket">
-                {value.buscetProduct.map(item => <Item item={item}></Item>)}
+                {value.buscetProduct.map(item => <BuscetItem item={item}></BuscetItem>)}
             </div>
         </div>
     )

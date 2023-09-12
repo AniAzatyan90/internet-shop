@@ -1,6 +1,6 @@
-import {Swiper, SwiperSlide} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css'
-import {useContext} from "react"
+import { useContext } from "react"
 import Context from "./Context"
 
 export default function Category() {

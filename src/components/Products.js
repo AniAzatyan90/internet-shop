@@ -9,9 +9,9 @@ export default function Products() {
 
     const handleClick = (product) => {
         const pr = products.find((value) => value.id === product.id);
+        pr.count = 1
         setBuscetProduct([...buscetProduct, pr])
         value.setTotal(value.total + pr.price)
-
     };
 
     return (
