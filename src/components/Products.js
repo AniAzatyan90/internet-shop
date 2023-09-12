@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import Context from "./Context"
-import { FaShoppingBasket } from 'react-icons/fa'
+import { BsBasket } from 'react-icons/bs'
 
 export default function Products() {
     const value = useContext(Context);
@@ -21,7 +21,9 @@ export default function Products() {
                     <img src={product.picture} alt="" />
                     <h2>{product.name}</h2>
                     <h3>{product.price} $</h3>
-                    <FaShoppingBasket onClick={() => handleClick(product)} />
+                    <BsBasket onClick={() => !value.buscetProduct.includes(product) ? handleClick(product) : null}
+
+                    />
                 </div>
             )}
         </div>

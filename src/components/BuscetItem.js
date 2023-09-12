@@ -18,9 +18,11 @@ export default function BuscetItem({ item }) {
         }
     };
 
+
     const removeProduct = (productId) => {
         const datedProducts = value.buscetProduct.filter((product) => product.id !== productId);
         value.setBuscetProduct(datedProducts);
+
     };
     return (
         <div key={item.id} className="itemBasket">
@@ -36,6 +38,7 @@ export default function BuscetItem({ item }) {
                     style={{ color: 'red' }}
                     onClick={() => {
                         value.setTotal(value.total - item.price * item.count);
+
                         removeProduct(item.id);
                     }}
                 />

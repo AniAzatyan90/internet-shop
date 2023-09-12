@@ -1,4 +1,4 @@
-import {useContext} from 'react'
+import { useContext } from 'react'
 import Context from './Context'
 
 export default function Filter() {
@@ -13,11 +13,17 @@ export default function Filter() {
     return (
         <div className="contFilter" style={styleFilter}>
             <div className='searchPrice'>
-                <input type="number" placeholder='Min Price'/>
-                <input type="number" placeholder='Max Price'/>
+                <input type="number" placeholder='Min Price' />
+                <input type="number" placeholder='Max Price' />
                 <button className='searchFilter'>Filter</button>
             </div>
-            <input type="search" placeholder='Search' className='search'/>
+            <input type="search" placeholder='Search' className='search' onChange={(e) => {
+                if (e.target.value === "") {
+                    value.setProducts(value.state)
+                } else {
+                    value.setProducts(value.products.filter(fil => fil.name.includes(e.target.value)))
+                }
+            }} />
         </div>
     )
 }

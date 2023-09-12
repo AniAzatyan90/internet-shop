@@ -18,7 +18,8 @@ export const dbProducts = [
         picture: 'img1/43.jpg',
         name: 'Necklace',
         price: 160,
-        category: 'jewerly'
+        category: 'jewerly',
+       
     },
     {
         id: 4,
@@ -777,6 +778,7 @@ export const dbProducts = [
         category: 'Accessories'
     }
 ]
+
 
 export const categImg = [
     {
