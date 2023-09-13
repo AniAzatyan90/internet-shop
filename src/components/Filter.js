@@ -1,8 +1,9 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import Context from './Context'
 
 export default function Filter() {
-
+    const [min, setMin] = useState(0)
+    const [max, setMax] = useState(0)
     const value = useContext(Context);
 
     const styleFilter = {
@@ -13,9 +14,21 @@ export default function Filter() {
     return (
         <div className="contFilter" style={styleFilter}>
             <div className='searchPrice'>
-                <input type="number" placeholder='Min Price' />
-                <input type="number" placeholder='Max Price' />
-                <button className='searchFilter'>Filter</button>
+                <input type="number" placeholder='Min Price' value={min}
+                    onChange={(e) => {
+                        setMin(e.target.value)
+                    }} />
+                <input type="number" placeholder='Max Price' value={max}
+                    onChange={(e) => {
+                        setMax(e.target.value)
+                    }} />
+                <button className='searchFilter' onClick={() => {
+                    console.log(min);
+                    if (min > 0 && max >
+                        0) {
+                        value.setProducts(value.products.filter(item => item.price >= min && item.price <= max))
+                    }
+                }}>Filter</button>
             </div>
             <input type="search" placeholder='Search' className='search' onChange={(e) => {
                 if (e.target.value === "") {

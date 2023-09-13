@@ -9,6 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import Products from './components/Products';
 import Basket from './components/Basket';
 import { dbProducts, language, categImg } from "./database/Database";
+import ProductModal from './components/ProductModal';
 
 
 function App() {
@@ -19,7 +20,11 @@ function App() {
     const [products, setProducts] = useState(dbProducts);
     const [categories, setCategories] = useState(categImg);
     const [buscetProduct, setBuscetProduct] = useState([]);
+    const [modalProduct, setModalProduct] = useState({});
+
     const [openbasket, setOpenbasket] = useState('polygon(50% 0, 50% 0, 50% 100%, 50% 100%)');
+    const [openProduct, setOpenProduct] = useState('polygon(50% 0, 50% 0, 50% 100%, 50% 100%)');
+
     const [total, setTotal] = useState(0);
     const [count, setCount] = useState(0)
     const value = {
@@ -31,7 +36,9 @@ function App() {
         openbasket, setOpenbasket,
         total, setTotal,
         count, setCount,
-        state, setState
+        state, setState,
+        openProduct, setOpenProduct,
+        modalProduct, setModalProduct
 
     }
     const paths = ['/Products', '/Ապրանքներ', '/Товары'];
@@ -41,6 +48,7 @@ function App() {
             <div className="App">
                 <Header />
                 <Nav />
+                <Category />
                 <Routes>
                     <Route path='/' element={<Section />}></Route>
                     {paths.map((path, index) => (
@@ -49,7 +57,9 @@ function App() {
                     <Route path='/Home' element={<Section />}></Route>
                 </Routes>
                 <Basket />
-                <Category />
+                <ProductModal />
+
+
             </div>
         </Context.Provider>
     );
