@@ -27,8 +27,12 @@ export default function Products() {
                     <img src={product.picture} alt="" />
                     <h2>{product.name}</h2>
                     <h3>{product.price} $</h3>
-                    <BsBasket onClick={() => !value.buscetProduct.includes(product) ? handleClick(product) : null}
-
+                    <BsBasket onClick={(e) => {
+                        if (!value.buscetProduct.includes(product)) {
+                            handleClick(product)
+                        }
+                        e.stopPropagation()
+                    }}
                     />
                 </div>
             )}
