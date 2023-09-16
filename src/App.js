@@ -2,14 +2,16 @@ import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Nav from './components/Nav';
+import Category from './components/Category';
 import Context from './components/Context';
 import Section from './components/Section';
-import Category from './components/Category';
+
 import { Route, Routes } from 'react-router-dom';
 import Products from './components/Products';
 import Basket from './components/Basket';
 import { dbProducts, language, categImg } from "./database/Database";
 import ProductModal from './components/ProductModal';
+import Pay from './components/Pay';
 
 
 function App() {
@@ -21,12 +23,11 @@ function App() {
     const [categories, setCategories] = useState(categImg);
     const [buscetProduct, setBuscetProduct] = useState([]);
     const [modalProduct, setModalProduct] = useState({});
-
     const [openbasket, setOpenbasket] = useState('polygon(50% 0, 50% 0, 50% 100%, 50% 100%)');
     const [openProduct, setOpenProduct] = useState('polygon(50% 0, 50% 0, 50% 100%, 50% 100%)');
 
     const [total, setTotal] = useState(0);
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
     const value = {
         lang, setLang,
         openfilter, setOpenfilter,
@@ -58,10 +59,10 @@ function App() {
                 </Routes>
                 <Basket />
                 <ProductModal />
-
-
+                <Pay />
             </div>
         </Context.Provider>
+
     );
 }
 

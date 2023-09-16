@@ -25,7 +25,14 @@ export default function Header() {
                 }} />
 
                 <AiOutlineHeart />
-                <AiFillCreditCard />
+                <div className='contPay'>
+                    <AiFillCreditCard onClick={() => {
+                        value.setOpenbasket('polygon(0 0, 100% 0, 100% 100%, 0% 100%)');
+                        document.body.style.overflow = 'hidden';
+                    }} />
+                </div>
+
+
             </div>
             <div className='language'>
                 <button data='arm' onClick={changeLang}>ARM</button>

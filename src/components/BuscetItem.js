@@ -9,12 +9,14 @@ export default function BuscetItem({ item }) {
     const addCount = () => {
         item.count = item.count + 1;
         value.setTotal(value.total + item.price);
+        value.setCount(value.count + 1)
     };
 
     const reduce = () => {
         if (item.count > 1) {
             item.count = item.count - 1;
             value.setTotal(value.total - item.price);
+            value.setCount(value.count - 1)
         }
     };
 
@@ -39,6 +41,7 @@ export default function BuscetItem({ item }) {
                     onClick={() => {
                         value.setTotal(value.total - item.price * item.count);
 
+                        
                         removeProduct(item.id);
                     }}
                 />

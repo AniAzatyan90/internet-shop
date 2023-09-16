@@ -23,10 +23,14 @@ export default function Filter() {
                         setMax(e.target.value)
                     }} />
                 <button className='searchFilter' onClick={() => {
-                    console.log(min);
-                    if (min > 0 && max >
-                        0) {
-                        value.setProducts(value.products.filter(item => item.price >= min && item.price <= max))
+                    if (min >= 0 && max >= 0) {
+                        if (min > 0 && max > 0) {
+                            value.setProducts(value.products.filter(item => item.price >= min && item.price <= max))
+                        } else if (min > 0 && max === 0) {
+                            value.setProducts(value.products.filter(item => item.price >= min))
+                        } else {
+                            value.setProducts(value.products.filter(item => item.price <= max))
+                        }
                     }
                 }}>Filter</button>
             </div>
@@ -34,7 +38,7 @@ export default function Filter() {
                 if (e.target.value === "") {
                     value.setProducts(value.state)
                 } else {
-                    value.setProducts(value.products.filter(fil => fil.name.includes(e.target.value)))
+                    value.setProducts(value.state.filter(fil => fil.name.includes(e.target.value)))
                 }
             }} />
         </div>
