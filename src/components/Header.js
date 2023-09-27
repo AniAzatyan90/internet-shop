@@ -8,14 +8,28 @@ import { language } from '../database/Database';
 export default function Header() {
     const value = useContext(Context);
 
+
+
+    let vaildName = /^[A-Z]+$/
+    let validNumber = /^\d{4}-\d{4}-\d{4}-\d{4}$/
+    let validDate = /^\d{2}\/\d{2}$/
+    let validCvv = /^\d{3}$/
+    let validRegion = /\+\d{3}/
+    let num = /^\d{2}$/
+
+
     const changeLang = (e) => {
-        value.setLang(language[e.target.getAttribute('data')].menu);
+        for (let key in language) {
+            if (e.target.getAttribute('data') === key) {
+                value.setLang(language[key].menu);
+            }
+        }
     }
 
     return (
         <header>
             <div className="logo">
-                <h1>CLICK & COLLECT</h1>
+                <img src='logo1.png'  alt=''/>
             </div>
 
             <div className="icons">
@@ -27,8 +41,8 @@ export default function Header() {
                 <AiOutlineHeart />
                 <div className='contPay'>
                     <AiFillCreditCard onClick={() => {
-                        value.setOpenbasket('polygon(0 0, 100% 0, 100% 100%, 0% 100%)');
-                        document.body.style.overflow = 'hidden';
+                        value.setOpenmoney('polygon(0 0, 100% 0, 100% 100%, 0% 100%)');
+                        document.body.style.overflow = 'hidden'
                     }} />
                 </div>
 

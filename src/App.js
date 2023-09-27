@@ -14,6 +14,7 @@ import ProductModal from './components/ProductModal';
 import Pay from './components/Pay';
 
 
+
 function App() {
 
     const [lang, setLang] = useState(language.eng.menu);
@@ -25,9 +26,13 @@ function App() {
     const [modalProduct, setModalProduct] = useState({});
     const [openbasket, setOpenbasket] = useState('polygon(50% 0, 50% 0, 50% 100%, 50% 100%)');
     const [openProduct, setOpenProduct] = useState('polygon(50% 0, 50% 0, 50% 100%, 50% 100%)');
+    const [openmoney, setOpenmoney] = useState('polygon(50% 0, 50% 0, 50% 100%, 50% 100%)');
+    const [totalpay, setTotalpay] = useState(0)
+    const [balancepay, setBalancepay] = useState(Math.round(Math.random() * 10000))
 
     const [total, setTotal] = useState(0);
     const [count, setCount] = useState(1)
+
     const value = {
         lang, setLang,
         openfilter, setOpenfilter,
@@ -39,7 +44,11 @@ function App() {
         count, setCount,
         state, setState,
         openProduct, setOpenProduct,
-        modalProduct, setModalProduct
+        modalProduct, setModalProduct,
+        openmoney, setOpenmoney,
+        balancepay, setBalancepay,
+        totalpay, setTotalpay
+
 
     }
     const paths = ['/Products', '/Ապրանքներ', '/Товары'];
@@ -60,6 +69,7 @@ function App() {
                 <Basket />
                 <ProductModal />
                 <Pay />
+
             </div>
         </Context.Provider>
 
